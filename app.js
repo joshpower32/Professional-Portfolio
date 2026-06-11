@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>Bug Bounty Security Research</h2>
             <p><strong>What is Bug Bounty Hunting?</strong> Companies pay independent security researchers to find vulnerabilities in their software before malicious hackers do. Rewards typically range from $100 to $5,000+ per finding depending on severity. This is legitimate, contracted work — every major tech company runs these programs.</p>
             
-            <p><strong>Where I Am Honestly:</strong> I have been systematically learning and practicing bug bounty hunting since 2023 across four platforms: HackerOne, Bugcrowd, Intigriti, and YesWeHack. The majority of my reports have come back as Not Applicable or Duplicate. That is an honest and normal description of where a serious researcher is at this stage. What separates my situation from someone who isn't making progress is that several of those outcomes involved real vulnerabilities — the finding was correct, the timing or framing was the problem.</p>
+            <p><strong>Where I Am Honestly:</strong> I have been systematically learning and practicing bug bounty hunting since 2021 across four platforms: HackerOne, Bugcrowd, Intigriti, and YesWeHack. The majority of my reports have come back as Not Applicable or Duplicate. That is an honest and normal description of where a serious researcher is at this stage. What separates my situation from someone who isn't making progress is that several of those outcomes involved real vulnerabilities — the finding was correct, the timing or framing was the problem.</p>
             
             <p><strong>My Reports That Mattered:</strong></p>
             <ul>
