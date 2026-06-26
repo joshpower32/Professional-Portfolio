@@ -76,11 +76,15 @@ document.addEventListener('DOMContentLoaded', () => {
         repairs.forEach(r => {
             const item = document.createElement('div');
             item.className = 'repair-item';
-            const photosHtml = r.photos.map(ph => `
+            const photosHtml = r.photos.map(ph => {
+                // Display a lightweight -web version; the lightbox opens the full-res original.
+                const webSrc = ph.src.replace(/\.(jpe?g|png)$/i, '-web.$1');
+                return `
                 <div class="repair-photo">
-                    <img src="${ph.src}" alt="${r.title} — ${ph.caption}" loading="lazy" onclick="window.open('${ph.src}', '_blank')">
+                    <img src="${webSrc}" data-full="${ph.src}" alt="${r.title} — ${ph.caption}" loading="lazy">
                     <small>${ph.caption}</small>
-                </div>`).join('');
+                </div>`;
+            }).join('');
             item.innerHTML = `<h3>${r.title}</h3><p class="repair-desc">${r.desc}</p><div class="repair-photos">${photosHtml}</div>`;
             repairContainer.appendChild(item);
         });
@@ -130,4 +134,30 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('close-bounty').onclick = () => {
         bountyModal.style.display = "none";
     };
+
+    // Image Lightbox — click any gallery photo to view it full-screen
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const openLightbox = (full, alt) => {
+        lightboxImg.src = full;
+        lightboxImg.alt = alt || '';
+        lightbox.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    };
+    const closeLightbox = () => {
+        lightbox.classList.remove('show');
+        lightboxImg.src = '';
+        document.body.style.overflow = '';
+    };
+    document.addEventListener('click', (e) => {
+        const img = e.target.closest('img[data-full]');
+        if (img) openLightbox(img.dataset.full, img.alt);
+    });
+    // Close on backdrop click, the × button, but not when clicking the image itself
+    lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('show')) closeLightbox();
+    });
 });

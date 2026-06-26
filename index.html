@@ -62,12 +62,12 @@
 <body>
     <header class="hero">
         <h1>Joshua Daniel Power</h1>
-        <p>Cybersecurity Research &middot; Web Development &middot; Hardware Repair & Engineering</p>
+        <p>Cybersecurity Research | Web Development | Hardware Repair | Photography </p>
     </header>
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
-            <p>I'm a cybersecurity researcher, web developer, and hands-on hardware repair technician based in Hamilton, Ontario. I have training in responsive web development and design from Juno College of Technology, and I am currently completing Google's Cybersecurity Professional Certificate on Coursera <a href="https://www.coursera.org/professional-certificates/google-cybersecurity">(https://www.coursera.org/professional-certificates/google-cybersecurity)</a>. I work across three practical skill areas, but currently none professionally: web application security research, front-end and full-stack development with firebase, and electronics repair projects.</p>
+            <p>I am a cybersecurity researcher, web developer, and hands-on hardware repair technician based in Hamilton, Ontario. I have training in responsive web development and design from Juno College of Technology, and I am currently completing Google's Cybersecurity Professional Certificate on Coursera <a href="https://www.coursera.org/professional-certificates/google-cybersecurity">(https://www.coursera.org/professional-certificates/google-cybersecurity)</a>. I work across three practical skill areas, but currently none professionally: web application security research, front-end and full stack development with firebase, and electronics repair projects.</p>
         </section>
         <section id="bug-bounty">
             <h2>My Bug Bounty Security Research</h2>
@@ -82,6 +82,24 @@
             <p>Hands-on diagnostic and repair work across computers, mobile devices, and game consoles &mdash; documented with photos from real repairs. Click any photo to view it full size.</p>
             <div id="repair-container" class="repair-gallery"></div>
         </section>
+        <section id="workspace">
+            <h2>In the Workshop</h2>
+            <p>A look at where the work happens &mdash; from board-level diagnostics to building software. Click any photo to view it full size.</p>
+            <div class="photo-gallery">
+                <figure>
+                    <img src="assets/logicboard-repair-web.jpg" data-full="assets/logicboard-repair.jpg" alt="Laptop logic board on the repair bench" loading="lazy">
+                    <figcaption>Board-level diagnostics at the repair bench</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/workbench-notebook-flatlay-web.jpg" data-full="assets/workbench-notebook-flatlay.jpg" alt="Workbench with project notebook, logic boards, and tools" loading="lazy">
+                    <figcaption>Planning &amp; project notes alongside the hardware</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/aperture-dev-workstation-web.jpg" data-full="assets/aperture-dev-workstation.jpg" alt="Dual-screen development workstation running the Aperture app" loading="lazy">
+                    <figcaption>Building software &mdash; the Aperture AI photo manager in progress</figcaption>
+                </figure>
+            </div>
+        </section>
         <section id="projects">
             <h2>My Development Work</h2>
             <div id="project-container" class="grid"></div>
@@ -93,6 +111,10 @@
             <div id="bounty-text"></div>
         </div>
     </div>
-    <script src="app.js"></script>
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <span class="lightbox-close" aria-label="Close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+    <script src="app.js?v=3"></script>
 </body>
 </html>
