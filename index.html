@@ -115,6 +115,10 @@
         <span class="lightbox-close" aria-label="Close">&times;</span>
         <img id="lightbox-img" src="" alt="">
     </div>
+    <footer class="site-footer">
+        <p>&copy; <span id="footer-year"></span> Joshua Daniel Power &middot; Built by <a href="https://joshpower32.github.io/Power-Studio-Storefront/" target="_blank" rel="noopener">Power Studio</a></p>
+    </footer>
     <script src="app.js?v=3"></script>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
