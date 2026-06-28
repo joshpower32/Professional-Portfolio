@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Projects Data
     const projects = [
+        { title: "Power Studio — My Web Design & Photography Business", desc: "My own small business. As a Hamilton-based small business owner and freelancer, I design fast, modern websites and shoot professional photography for local small businesses, professionals, and freelancers across Hamilton and the Greater Toronto Area. This is my live storefront — browse packages, explore my library of website framework demos, and book a project. Built and run end-to-end by me.", link: "https://joshpower32.github.io/Power-Studio-Storefront/", featured: true },
         { title: "YMCA Job Search Tracker (Unofficial)", desc: "A Firebase-backed job application tracker with user accounts and shareable public dashboards — log roles, contacts, and two-week follow-ups, and browse others' boards for leads. An independent personal project, not affiliated with YMCA. Built by Joshua Power.", link: "https://joshpower32.github.io/YMCA-Job-Search-Tracker/" },
         { title: "Joe's Photography", desc: "A photography portfolio website with a Pexels API-powered search gallery, full-screen lightbox viewer, and dedicated pages for About, Gallery, Hire, and Contact. Built by Joshua Power.", link: "https://joshpower32.github.io/Joes-Photography/" },
         { title: "Daily Update Dashboard", desc: "An automated daily-updating (day of the year) motivation app. Built by Joshua Power.", link: "https://joshpower32.github.io/joshuadaniel-daily-update/" },
@@ -62,8 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) {
         projects.forEach(p => {
             const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `<h3>${p.title}</h3><p>${p.desc}</p><small>Click to open in new tab</small>`;
+            card.className = p.featured ? 'card card--featured' : 'card';
+            const badge = p.featured ? `<span class="card-badge">My Business</span>` : '';
+            const cta = p.featured ? 'Visit Power Studio →' : 'Click to open in new tab';
+            card.innerHTML = `${badge}<h3>${p.title}</h3><p>${p.desc}</p><small>${cta}</small>`;
             card.style.cursor = "pointer";
             card.onclick = () => window.open(p.link, '_blank');
             container.appendChild(card);
